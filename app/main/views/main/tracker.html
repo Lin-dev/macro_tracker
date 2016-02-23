@@ -1,0 +1,65 @@
+<!-- <:Title>
+  Todo
+
+<:Body>
+  <h1>Todo</h1>
+
+  <table class="table">
+    {{ _todos.each do |todo| }}
+      <tr>
+        <td><input type="checkbox" checked="{{ todo._completed }}"></td>
+        <td class="{{ if todo._completed }} complete {{ end }}">{{ todo._name }}</td>
+        <td><button e-click="todo.destroy">x</button></td>
+      </tr>
+    {{ end }}
+  </table>
+
+  <form e-submit="add_todo" role="form">
+    <div class="form-group">
+      <label>Todo Item</label>
+      <input class="form-control" type="text" value="{{ _new_todo }}" />
+    </div>
+  </form>
+
+ -->
+
+ <:Title>
+  Macro Tracker
+
+<:Body>
+<div class="row">
+  <div class="col-md-8">
+    <h3>Track Your Macros:</h3>
+    <p>{{ Time.now.asctime.slice(0..9) +" "+ Time.new.year.to_s }}<p>
+
+    <table class="macro-table">
+      <!-- Using params to store the current index  -->
+    </table>
+
+    <form e-submit="add_macro" role="form">
+
+      <div class="form-group">
+        <label>Protein</label>
+        <input class="form-control" type="text" value="{{ _new_macro }}" />
+      </div>
+    </form>
+  </div>
+
+<!-- Display todo list item info extra info -->
+<!--   <div class="col-md-8">
+    {{ if current_todo }}
+    <h2> {{ current_todo._name }}</h2>
+    <textarea>{{ current_todo._description }}</textarea>
+    {{ end }}
+  </div>
+</div> -->
+
+<!-- HTML to add the progress bar; check bootstrap docs to understand code -->
+<!-- <h1>{{ _todos.size }} Todo List</h1>
+<button e-click="check_all">Check All ({{ incomplete }})</button>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" style="width: {{ percent_complete }}%;" >
+    {{ percent_complete }}%
+  </div>
+</div>
+ -->
