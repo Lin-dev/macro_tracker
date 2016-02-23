@@ -3,13 +3,18 @@ module Main
   class MainController < Volt::ModelController
     model :store
 
-  def percent_complete
-    _todos.size.then do |size|
-      completed.then do |completed|
-        (completed / size.to_f * 100).round
-      end
+    def add_macro
+      _macros << { name: page._new_macro }
+      page._new_macro = ' '
     end
-  end
+
+  # def percent_complete
+  #   _todos.size.then do |size|
+  #     completed.then do |completed|
+  #       (completed / size.to_f * 100).round
+  #     end
+  #   end
+  # end
 
   def index
     # Add code for when the index view is loaded
